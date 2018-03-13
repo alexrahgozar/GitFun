@@ -39,3 +39,25 @@ const longestCommonPrefix = arrayOfStrings => {
         is empty)
  };
 */
+
+
+const longestCommonPrefix = (arrayOfStrings) => {
+  // initialize the "longest prefix" with the entire first string
+  // iterate from the 2nd string onward
+    // shorten the prefix from the end until there's a match (which is guaranteed when the string
+    //    is empty)
+    var sample = arrayOfStrings[0];
+    var target = arrayOfStrings[1];
+    for(var i = 0; i < target.length; i++ ) {
+      if(sample.indexOf(target[i]) === 0) {
+        return "match";
+      } else {
+        sample = sample.slice(0,-1);
+      }
+    }
+    return "not a match";
+ };
+
+
+longestCommonPrefix(["flair", "flatulence"]) // match
+longestCommonPrefix(["foo", "bar"]) // not a match

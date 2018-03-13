@@ -32,3 +32,24 @@ const isNumberPalindrome = (number) => {
   return reversed === number;
 }
  */
+
+
+ const isNumberPalindrome = (number) => {
+  // copy input number to build reversed number
+  // turn copy input to string
+  // init reversed string number from last index value
+  // iterate until copy is zero and push each char into new cache that holds a string
+  // turn cache into number
+
+  var cache = '';
+  var copyNum = number.toString();
+
+    for(var i = copyNum.length-1; i >= 0; i--) {
+      cache += copyNum[i];
+    }
+  var reversed = parseInt(cache);
+
+  return reversed === number;
+};
+
+ isNumberPalindrome(1331);
